@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <base href="/" />
+        <title>Cat Kebab</title>
+        <meta name="robots" content="index,follow">
+        <meta name="title" content="Cat Kebab" />
+        <meta name="description" content="Yes." />
+
+        <script type="text/javascript">
+            var files = %%FILES%%;
+        </script>
+    </head>
+    <body>
+        <div style="margin: auto; display: flex; flex-direction: column;">
+            <img id="the-cat" />
+            <input id="random" type="button" value="Random!" onclick="updateImage();" />
+        </div>
+
+        <script type="text/javascript">
+            function updateImage() {
+                var selectedFile = files[Math.floor(Math.random() * files.length)];
+                document.getElementById("the-cat").src = selectedFile;
+            }
+
+            updateImage();
+        </script>
+    </body>
+</html>
